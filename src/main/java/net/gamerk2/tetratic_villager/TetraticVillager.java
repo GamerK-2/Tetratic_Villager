@@ -1,6 +1,7 @@
 package net.gamerk2.tetratic_villager;
 
 import com.mojang.logging.LogUtils;
+import net.gamerk2.tetratic_villager.village.TetraticVillagerStructures;
 import net.gamerk2.tetratic_villager.villager.TetraticPoiTypeTagsProvider;
 import net.gamerk2.tetratic_villager.villager.TetraticProfession;
 import net.minecraft.client.Minecraft;
@@ -14,13 +15,11 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import se.mickelus.tetra.ClientSetup;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -28,7 +27,7 @@ import java.util.concurrent.CompletableFuture;
 public class TetraticVillager
 {
     public static final String MODID = "tetratic_villager";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public TetraticVillager()
     {
@@ -37,9 +36,8 @@ public class TetraticVillager
         modEventBus.addListener(this::commonSetup);
         TetraticProfession.register(modEventBus);
 
-        MinecraftForge.EVENT_BUS.register(this);    
-
-
+        MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.addListener(TetraticVillagerStructures::addNewVillageBuilding);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

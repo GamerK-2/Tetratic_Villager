@@ -6,7 +6,6 @@ import net.gamerk2.tetratic_villager.trades.ItemsToItemsTrade;
 import net.gamerk2.tetratic_villager.villager.TetraticProfession;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
