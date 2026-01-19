@@ -28,8 +28,8 @@ public class TetraticModEvents {
     public static void addTetraTrades(VillagerTradesEvent event) {
         VillagerProfession profession = event.getType();
 
-        // Tetra Forger Trades
-        if (TetraticProfession.TETRA_FORGER.get().equals(profession)) {
+        // Tetra Smith Trades
+        if (TetraticProfession.TETRA_SMITH.get().equals(profession)) {
             add(event, 1, new EmeraldsToItemsTrade(new ItemStack(RackBlock.instance.asItem(), 1), 4, 16, 1));
             add(event, 1, new EmeraldsToItemsTrade(ModularDoubleHeadedItem.setupHammerStack("iron", "spruce"), 11, 4, 3));
             add(event, 2, new EmeraldsToItemsTrade(new ItemStack(PristineEmeraldItem.instance, 1), 15, 4, 2));

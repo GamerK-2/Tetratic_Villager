@@ -18,7 +18,9 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.ArrayList;
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = TetraticVillager.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+import static net.gamerk2.tetratic_villager.TetraticVillager.MODID;
+
+@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TetraticVillagerStructures {
     private static final ResourceKey<StructureProcessorList> EMPTY_PROCESSOR_LIST_KEY = ResourceKey.create(
             Registries.PROCESSOR_LIST, new ResourceLocation("minecraft", "empty"));
@@ -38,15 +40,13 @@ public class TetraticVillagerStructures {
             return;
         }
 
-        ResourceLocation poolRL = new ResourceLocation("minecraft", "village/plains/houses");
-        ResourceLocation pieceRL = new ResourceLocation("tetratic_villager", "plains/plains_forger_house");
-        TetraticVillager.LOGGER.info("Trying to add piece {} to pool {}", pieceRL, poolRL);
-
-        addBuildingToPool(templatePoolRegistry, processorListRegistry, poolRL, pieceRL, 10);
-        addBuildingToPool();
+        addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft", "village/plains/houses"), new ResourceLocation(MODID, "plains/plains_tetra_smith_house"), 4);
+        addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft", "village/taiga/houses"), new ResourceLocation(MODID, "taiga/taiga_tetra_smith_house"), 4);
+        addBuildingToPool(templatePoolRegistry, processorListRegistry, new ResourceLocation("minecraft", "village/desert/houses"), new ResourceLocation(MODID, "desert/desert_tetra_smith_house"), 4);
     }
 
     private static void addBuildingToPool(Registry<StructureTemplatePool> templatePoolRegistry, Registry<StructureProcessorList> processorListRegistry, ResourceLocation poolRL, ResourceLocation nbtPieceRL, int weight) {
+
         Holder<StructureProcessorList> emptyProcessorList = processorListRegistry.getHolderOrThrow(EMPTY_PROCESSOR_LIST_KEY);
 
         StructureTemplatePool pool = templatePoolRegistry.get(poolRL);
@@ -56,7 +56,7 @@ public class TetraticVillagerStructures {
             int i = 0;
             for (ResourceLocation key : templatePoolRegistry.keySet()) {
                 if (i++ > 20) break;
-                TetraticVillager.LOGGER.info(" - pool key: {}", key);
+                TetraticVillager.LOGGER.info(" - pool key: {}", key);   
             }
             return;
         }

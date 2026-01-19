@@ -19,9 +19,9 @@ public class TetraticProfession {
     public static final RegistryObject<PoiType> WORKBENCH_POI = POI_TYPES.register("workbench_poi", () -> new PoiType(
             ImmutableSet.copyOf(BasicWorkbenchBlock.instance.getStateDefinition().getPossibleStates()), 1, 1));
 
-    public static final RegistryObject<VillagerProfession> TETRA_FORGER = VILLAGER_PROFESSIONS.register(
-            "tetra_forger", () -> new VillagerProfession(
-                    "tetra_forger",
+    public static final RegistryObject<VillagerProfession> TETRA_SMITH = VILLAGER_PROFESSIONS.register(
+            "tetra_smith", () -> new VillagerProfession(
+                    "tetra_smith",
                     poiTypeHolder -> poiTypeHolder.get() == WORKBENCH_POI.get(),
                     holder -> holder.get() == WORKBENCH_POI.get(),
                     ImmutableSet.of(), ImmutableSet.of(),

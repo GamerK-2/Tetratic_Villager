@@ -1,0 +1,100 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "min": 7,
+        "max": 9
+      },
+      "bonus_rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tetra:metal_scrap",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:group",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "name": "tetra:scroll_rolled",
+                "functions": [
+                  {
+                    "function": "tetra:scroll",
+                    "key": "wood_expertise",
+                    "intricate": false,
+                    "material": 0,
+                    "ribbon": "bcb8b5",
+                    "glyphs": [ 2, 1, 2, 1 ],
+                    "schematics": [ "tetra:wood_expertise" ]
+                  }
+                ]
+              },
+              {
+                "type": "minecraft:item",
+                "name": "tetra:scroll_rolled",
+                "functions": [
+                  {
+                    "function": "tetra:scroll",
+                    "key": "stone_expertise",
+                    "intricate": false,
+                    "material": 0,
+                    "ribbon": "9a9a9a",
+                    "glyphs": [ 2 ],
+                    "schematics": [ "tetra:stone_expertise" ]
+                  }
+                ]
+              },
+              {
+                "type": "minecraft:item",
+                "name": "tetra:scroll_rolled",
+                "functions": [
+                  {
+                    "function": "tetra:scroll",
+                    "key": "metal_expertise",
+                    "intricate": false,
+                    "material": 0,
+                    "ribbon": "ffffff",
+                    "glyphs": [ 4, 6, 6, 5 ],
+                    "schematics": [ "tetra:metal_expertise" ]
+                  }
+                ]
+              },
+              {
+                "type": "minecraft:item",
+                "name": "tetra:scroll_rolled",
+                "functions": [
+                  {
+                    "function": "tetra:scroll",
+                    "key": "gem_expertise",
+                    "intricate": false,
+                    "material": 0,
+                    "ribbon": "2bffee",
+                    "glyphs": [ 14, 13, 14, 15 ],
+                    "schematics": [ "tetra:gem_expertise" ]
+                  }
+                ]
+              }
+            ],
+            "conditions": [
+              {
+                "condition": "minecraft:random_chance",
+                "chance": 0.9
+              }
+            ]
+          }
+        ]
+    }
+  ]
+}
