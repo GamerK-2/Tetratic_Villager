@@ -32,13 +32,13 @@ public class TetraticModEvents {
         if (TetraticProfession.TETRA_SMITH.get().equals(profession)) {
             add(event, 1, new EmeraldsToItemsTrade(new ItemStack(RackBlock.instance.asItem(), 1), 4, 16, 1));
             add(event, 1, new EmeraldsToItemsTrade(ModularDoubleHeadedItem.setupHammerStack("iron", "spruce"), 11, 4, 3));
-            add(event, 2, new EmeraldsToItemsTrade(new ItemStack(PristineEmeraldItem.instance, 1), 15, 4, 2));
+            add(event, 2, new EmeraldsToItemsTrade(new ItemStack(PristineEmeraldItem.instance, 1), 20, 4, 2));
             add(event, 2, new ItemsToEmeraldsTrade(MetalScrapItem.instance.get().asItem(), 6, 2, 24, 2));
-            add(event, 3, new ItemsToItemsTrade(Items.EMERALD, 16, Items.AMETHYST_SHARD, 3, new ItemStack(PristineAmethystItem.instance.asItem(), 1), 12, 4));
-            add(event, 3, new ItemsToItemsTrade(Items.EMERALD, 20, Items.LAPIS_LAZULI, 4, new ItemStack(PristineLapisItem.instance.asItem(), 1), 8, 5));
+            add(event, 3, new ItemsToItemsTrade(Items.EMERALD, 23, Items.AMETHYST_SHARD, 3, new ItemStack(PristineAmethystItem.instance.asItem(), 1), 12, 4));
+            add(event, 3, new ItemsToItemsTrade(Items.EMERALD, 28, Items.LAPIS_LAZULI, 4, new ItemStack(PristineLapisItem.instance.asItem(), 1), 8, 5));
             add(event, 4, new EmeraldsToItemsTrade(new ItemStack(GeodeItem.instance.asItem(), 1), 8, 16, 3));
-            add(event, 4, new ItemsToItemsTrade(Items.EMERALD, 32, Items.DIAMOND, 2, new ItemStack(PristineDiamondItem.instance.asItem(), 1), 6, 9));
-            add(event, 5, new ItemsToItemsTrade(MetalScrapItem.instance.get().asItem(), 24, Blocks.MAGMA_BLOCK.asItem(), 6, new ItemStack(ThermalCellItem.instance.get(), 1), 4, 8));
+            add(event, 4, new ItemsToItemsTrade(Items.EMERALD, 36, Items.DIAMOND, 2, new ItemStack(PristineDiamondItem.instance.asItem(), 1), 6, 9));
+            add(event, 5, new ItemsToItemsTrade(MetalScrapItem.instance.get().asItem(), 24, Blocks.MAGMA_BLOCK.asItem(), 8, new ItemStack(ThermalCellItem.instance.get(), 1), 4, 8));
         }
     }
 
